@@ -1,7 +1,7 @@
 sources:
   - name: jaffle_shop
     database: dev
-    schema: "raw"
+    schema: "raw"          
     config:
       freshness:
         warn_after:
@@ -13,7 +13,17 @@ sources:
       loaded_at_field: _etl_loaded_at
     tables:
       - name: jaffle_shop_customers
+        columns:
+          - name: id
+            data_tests:
+              - unique
+              - not_null
         config:
           freshness: null
       - name: jaffle_shop_orders
+        columns:
+          - name: id
+            data_tests:
+              - unique
+              - not_null
         
