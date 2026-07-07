@@ -2,7 +2,7 @@ with
 
 source as (
 
-    select * from "raw".stripe_payments
+    select * from {{ source('stripe', 'stripe_payments') }}
 
 ),
 
